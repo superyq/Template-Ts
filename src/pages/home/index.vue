@@ -4,7 +4,11 @@ import DemoEchart from "./echarts/DemoEchart.vue";
 
 <template>
   <div class="page-home">
-    <DemoEchart/>
+    <DemoEchart />
+    <div>
+      <div>1</div>
+      <div class="mt-2">2</div>
+    </div>
   </div>
 </template>
 

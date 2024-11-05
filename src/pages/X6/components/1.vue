@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Graph } from "@antv/x6";
 
-const graph = new Graph({
+new Graph({
   container: document.getElementById("container"),
   autoResize: true,
 });

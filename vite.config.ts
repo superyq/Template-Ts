@@ -16,7 +16,7 @@ export default defineConfig(({ command }) => {
 
   return {
     base: "/",
-    envPrefix: "YQ",
+    envPrefix: "VITE",
     plugins: [
       vue(),
       AutoImport({
