@@ -1,21 +1,17 @@
-<script setup lang="ts">
-import { NThemeEditor } from "naive-ui";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <NThemeEditor>
-    <NaiveTheme>
-      <NLoadingBarProvider>
-        <NMessageProvider>
-          <NDialogProvider>
-            <NaiveUiApi></NaiveUiApi>
-          </NDialogProvider>
-        </NMessageProvider>
-      </NLoadingBarProvider>
+  <NaiveTheme>
+    <NLoadingBarProvider>
+      <NMessageProvider>
+        <NDialogProvider>
+          <NaiveUiApi></NaiveUiApi>
+        </NDialogProvider>
+      </NMessageProvider>
+    </NLoadingBarProvider>
 
-      <RouterView></RouterView>
-    </NaiveTheme>
-  </NThemeEditor>
+    <RouterView></RouterView>
+  </NaiveTheme>
 </template>
 
 <style scoped></style>
