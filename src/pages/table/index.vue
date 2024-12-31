@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="index">index</div>
+  <div class="p-table">table</div>
 </template>
 
 <style lang="scss" scoped></style>

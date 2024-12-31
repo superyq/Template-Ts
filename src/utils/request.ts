@@ -1,5 +1,4 @@
 import axios from "axios";
-import { getToken } from "@/utils/cookie.ts";
 import { tansParams, blobValidate } from "@/utils/index.ts";
 import errorCode from "@/utils/errorCode.ts";
 import { useUserStore } from "@/store/user.ts";
@@ -17,12 +16,6 @@ const service = axios.create({
 
 // 请求拦截器
 service.interceptors.request.use((config: any) => {
-  // 是否需要 token，isToken 为 true 时不需要 token
-  const isToken = (config.headers || {}).isToken === false;
-  if (getToken() && !isToken) {
-    // 让请求携带token
-    config.headers["Authorization"] = "Bearer " + getToken();
-  }
   // get请求映射params参数
   if (config.method === "get" && config.params) {
     let url = config.url + "?" + tansParams(config.params);
@@ -48,27 +41,7 @@ service.interceptors.response.use(
     ) {
       return res.data;
     }
-    if (code === 401) {
-      if (!isRelogin.show) {
-        isRelogin.show = true;
-        window.$dialog.warning({
-          title: "系统提示",
-          content: "登录状态已过期，您可以继续留在该页面，或者重新登录",
-          positiveText: "重新登录",
-          negativeText: "取消",
-          onPositiveClick: () => {
-            isRelogin.show = false;
-            userStore.logout().then(() => {
-              location.href = "/";
-            });
-          },
-          onNegativeClick: () => {
-            isRelogin.show = false;
-          },
-        });
-      }
-      return Promise.reject("无效的会话，或者会话已过期，请重新登录。");
-    } else if (code !== 200) {
+    if (code !== 200) {
       return Promise.reject(msg);
     } else {
       return res.data;
