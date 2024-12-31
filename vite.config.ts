@@ -54,7 +54,7 @@ export default defineConfig(({ command }) => {
       open: true,
       proxy: {
         "/dev-api": {
-          target: "http://localhost:1112",
+          target: "http://127.0.0.1:3000",
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/dev-api/, ""),
         },

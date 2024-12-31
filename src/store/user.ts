@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { login, logout } from "@/api/login-mock.ts";
+import { login, logout } from "@/api/login.ts";
 import { getUserInfo } from "@/api/user-mock.ts";
 import { ILoginPramas } from "@/model/login.ts";
 import { removeToken, setToken, getToken } from "@/utils/cookie.ts";

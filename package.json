@@ -6,16 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "nodemon server/index.js"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@antv/x6": "^2.18.1",
+    "@fastify/mysql": "^5.0.1",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.6.7",
     "echarts": "^5.5.0",
     "fast-glob": "^3.3.2",
+    "fastify": "^5.1.0",
     "file-saver": "^2.0.5",
     "js-cookie": "^3.0.5",
     "jsencrypt": "^3.3.2",
